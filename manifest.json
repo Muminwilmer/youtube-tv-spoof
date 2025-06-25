@@ -1,25 +1,28 @@
 {
-  "manifest_version": 2,
-  "name": "YouTube TV Switch Spoofer",
-  "version": "1.0",
-  "description": "Pretends to be a switch for youtube.com/tv",
-  "permissions": [
-    "webRequest",
-    "webRequestBlocking",
-    "tabs",
-    "*://www.youtube.com/tv*"
-  ],
-  "background": {
-    "scripts": ["background.js"]
-  },
-  "browser_action": {
-    "default_title": "Open YouTube TV"
-  },
-  "content_scripts": [
-    {
-      "matches": ["*://www.youtube.com/tv*"],
-      "js": ["content.js"],
-      "run_at": "document_start"
-    }
-  ]
+    "manifest_version": 2,
+    "name": "YouTube TV Switch Spoofer",
+    "version": "1.0",
+    "description": "Pretends to be a switch for youtube.com/tv",
+    "permissions": [
+        "webRequest",
+        "webRequestBlocking",
+        "tabs",
+        "*://www.youtube.com/tv*"
+    ],
+    "icons": {
+        "48": "icons/icon-48.png",
+        "96": "icons/icon-96.png"
+    },
+
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "browser_action": {
+        "default_title": "Open YouTube TV"
+    },
+    "content_scripts": [{
+        "matches": ["*://www.youtube.com/tv*"],
+        "js": ["content.js"],
+        "run_at": "document_start"
+    }]
 }
