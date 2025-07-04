@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
-    "name": "YouTube TV Switch Spoofer",
-    "version": "1.1.0",
-    "description": "Pretends to be a switch for youtube.com/tv",
+    "name": "YouTube TV Spoofer",
+    "version": "1.1.1",
+    "description": "Pretends to be a Nintendo Switch for YouTube.com/tv",
     "homepage_url": "https://github.com/Muminwilmer/youtube-tv-spoofer",
     "author": "Vera",
     "permissions": [

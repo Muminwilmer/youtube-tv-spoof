@@ -15,10 +15,6 @@ browser.webRequest.onBeforeSendHeaders.addListener(
 );
 
 browser.browserAction.onClicked.addListener(async () => {
-    if (!browser.permissions.contains({ permissions: ["tabs"] })){
-        if (!browser.permissions.request({ permissions: ["tabs"] })) return;
-    }
-
     browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
         if (tabs[0].url && tabs[0].url.includes("youtube.com/tv")) {
             return;
