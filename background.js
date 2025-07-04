@@ -14,13 +14,16 @@ browser.webRequest.onBeforeSendHeaders.addListener(
     ["blocking", "requestHeaders"]
 );
 
-browser.browserAction.onClicked.addListener(() => {
+browser.browserAction.onClicked.addListener(async () => {
+    if (!browser.permissions.contains({ permissions: ["tabs"] })){
+        if (!browser.permissions.request({ permissions: ["tabs"] })) return;
+    }
+
     browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
-        const currentTab = tabs[0];
-        if (currentTab.url && currentTab.url.includes("youtube.com/tv")) {
+        if (tabs[0].url && tabs[0].url.includes("youtube.com/tv")) {
             return;
         }
-        // If not, open YouTube TV in a new tab
+
         browser.tabs.create({ url: "https://www.youtube.com/tv" });
     });
 });

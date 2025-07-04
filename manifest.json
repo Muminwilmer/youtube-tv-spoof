@@ -1,14 +1,13 @@
 {
     "manifest_version": 2,
     "name": "YouTube TV Switch Spoofer",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "description": "Pretends to be a switch for youtube.com/tv",
     "homepage_url": "https://github.com/Muminwilmer/youtube-tv-spoofer",
     "author": "Vera",
     "permissions": [
         "webRequest",
         "webRequestBlocking",
-        "tabs",
         "*://www.youtube.com/tv*"
     ],
     "web_accessible_resources": [
@@ -22,7 +21,8 @@
         "96": "icons/icon-96.png"
     },
     "background": {
-        "scripts": ["background.js"]
+        "scripts": ["background.js"],
+        "persistent": false
     },
     "browser_action": {
         "default_title": "Open YouTube TV"
